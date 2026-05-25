@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizza Dough</title>
+        <link rel="manifest" href="manifest.json">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="Recipes">
+        <link rel="apple-touch-icon" href="img.jpg">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .content {
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 40px;
+                background: rgba(0, 0, 0, 0.6);
+                color: white;
+                min-height: 100vh;
+                box-sizing: border-box;
+            }
+
+            h1 {
+                font-size: 64px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            ul, ol {
+                border: 2px solid rgba(255, 255, 255, 0.4);
+                border-radius: 8px;
+                padding: 16px 16px 16px 36px;
+            }
+
+            a.back {
+                display: inline-block;
+                margin-bottom: 24px;
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+            }
+
+            a.back:hover {
+                color: white;
+            }
+        </style>
+    </head>
+    <body class="hero">
+        <div class="content">
+            <a href="index.html" class="back">← Back to home</a>
+            <h1>Pizza Dough</h1>
+
+            <h2>Ingredients</h2>
+            <ul>
+                <li>Arencio — 3kg</li>
+                <li>Verde — 6kg</li>
+                <li>Olive oil — 300g</li>
+                <li>Salt — 250g</li>
+                <li>Dry yeast — 17.5g</li>
+                <li>Luke-warm water (28–32°C)</li>
+            </ul>
+
+            <h2>Instructions</h2>
+            <ol>
+                <li>Put 90% of the water in the mixer</li>
+                <li>In the remaining water, mix in the yeast</li>
+                <li>Put all the flour in the mixer</li>
+                <li>Mix the flour for 1 minute</li>
+                <li>Add the yeast water and mix for 5 minutes</li>
+                <li>Add the salt and mix for 5 minutes</li>
+                <li>Add the olive oil and mix for 5 minutes</li>
+                <li>Oil the table with olive oil so the dough doesn't stick</li>
+                <li>Fold the dough</li>
+                <li>Rest for 30 minutes</li>
+                <li>Roll the dough into balls of 250g each</li>
+                <li>Let it rise outside for 30–60 minutes</li>
+            </ol>
+        </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+    </body>
+</html>

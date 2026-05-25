@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    font-family: system-ui;
+}
+
+.hero {
+    color:rgb(241, 236, 236);
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-recipe {
+    min-height: 100vh;
+    background-image: url("img.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recepter</title>
+        <link rel="manifest" href="manifest.json">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="Recipes">
+        <link rel="apple-touch-icon" href="img.jpg">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .content {
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 40px;
+                background: rgba(0, 0, 0, 0.6);
+                color: white;
+                min-height: 100vh;
+                box-sizing: border-box;
+            }
+
+            h1 {
+                font-size: 64px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            a.back {
+                display: inline-block;
+                margin-bottom: 24px;
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+            }
+
+            a.back:hover {
+                color: white;
+            }
+
+            ul {
+                border: 2px solid rgba(255, 255, 255, 0.4);
+                border-radius: 8px;
+                padding: 16px 16px 16px 36px;
+            }
+        </style>
+    </head>
+    <body class="hero-recipe">
+        <div class="content">
+            <a href="index.html" class="back">← Back to home</a>
+            <h1>Red Wine Sauce</h1>
+            <p>This is a simple red wine sauce that I learned at the restaurant Grand Véranda.</p>
+
+            <h2>Ingredients</h2>
+            <ul>
+                <li>Red wine</li>
+                <li>Carrots</li>
+                <li>Red onion</li>
+                <li>Garlic</li>
+                <li>Thyme</li>
+                <li>Tomato paste</li>
+                <li>Sugar</li>
+                <li>Cherry vinegar</li>
+                <li>Celeriac</li>
+                <li>Maizena</li>
+                <li>Beef stock</li>
+                <li>Cooking oil</li>
+                <li>Salt and Pepper</li>
+            </ul>
+
+            <h2>How to Make</h2>
+            <ol>
+                <li>Cut the vegetables into small pieces and sauté them in a pot with oil</li>
+                <li>Add sugar and caramelize it for a while</li>
+                <li>Add the tomato paste and stir for a few minutes</li>
+                <li>Pour in the wine, beef stock and a little water</li>
+                <li>Reduce by half</li>
+                <li>Season with salt and pepper</li>
+                <li>Thicken with cornstarch to desired consistency</li>
+            </ol>
+        </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+    </body>
+</html>

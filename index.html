@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mina Recept</title>
+        <link rel="manifest" href="manifest.json">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="Recipes">
+        <link rel="apple-touch-icon" href="img.jpg">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .home-container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 60px 20px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 64px;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+                margin-bottom: 50px;
+                opacity: 0.85;
+            }
+
+            .recipe-card {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.15);
+                border: 2px solid rgba(255, 255, 255, 0.4);
+                border-radius: 12px;
+                padding: 30px 40px;
+                text-decoration: none;
+                color: inherit;
+                transition: background 0.2s;
+            }
+
+            .recipe-card:hover {
+                background: rgba(255, 255, 255, 0.25);
+            }
+
+            .recipe-card h2 {
+                margin: 0 0 8px 0;
+                font-size: 28px;
+            }
+
+            .recipe-card p {
+                margin: 0;
+                opacity: 0.8;
+            }
+        </style>
+    </head>
+    <body class="hero">
+        <div class="home-container">
+            <h1>Mina Recept</h1>
+            <p class="subtitle">Dexter's Personal Recipe</p>
+
+            <a href="mainsite.html" class="recipe-card">
+                <h2>Red Wine Sauce</h2>
+                <p>Classic sauce from Grand Véranda</p>
+            </a>
+
+            <a href="pizza.html" class="recipe-card">
+                <h2>Pizza Dough</h2>
+                <p>Classic dough with Arencio & Verde flour</p>
+            </a>
+        </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+    </body>
+</html>
