@@ -1,8 +1,13 @@
-const CACHE_NAME = 'recipes-v1';
+const CACHE_NAME = 'recipes-v3';
 const FILES_TO_CACHE = [
     './index.html',
     './mainsite.html',
     './pizza.html',
+    './sauces.html',
+    './bread.html',
+    './chicken.html',
+    './fish.html',
+    './oil.html',
     './style.css',
     './img.jpg',
     './background.jpg'
@@ -11,6 +16,14 @@ const FILES_TO_CACHE = [
 self.addEventListener('install', e => {
     e.waitUntil(
         caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
+    );
+});
+
+self.addEventListener('activate', e => {
+    e.waitUntil(
+        caches.keys().then(keys =>
+            Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+        )
     );
 });
 

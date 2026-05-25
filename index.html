@@ -28,29 +28,29 @@
                 opacity: 0.85;
             }
 
-            .recipe-card {
+            .category-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .category-card {
                 display: inline-block;
                 background: rgba(255, 255, 255, 0.15);
                 border: 2px solid rgba(255, 255, 255, 0.4);
                 border-radius: 12px;
-                padding: 30px 40px;
+                padding: 30px 50px;
                 text-decoration: none;
-                color: inherit;
+                color: white;
+                font-size: 24px;
+                font-weight: bold;
+                font-family: system-ui;
                 transition: background 0.2s;
             }
 
-            .recipe-card:hover {
+            .category-card:hover {
                 background: rgba(255, 255, 255, 0.25);
-            }
-
-            .recipe-card h2 {
-                margin: 0 0 8px 0;
-                font-size: 28px;
-            }
-
-            .recipe-card p {
-                margin: 0;
-                opacity: 0.8;
             }
         </style>
     </head>
@@ -59,20 +59,19 @@
             <h1>Mina Recept</h1>
             <p class="subtitle">Dexter's Personal Recipe</p>
 
-            <a href="mainsite.html" class="recipe-card">
-                <h2>Red Wine Sauce</h2>
-                <p>Classic sauce from Grand Véranda</p>
-            </a>
-
-            <a href="pizza.html" class="recipe-card">
-                <h2>Pizza Dough</h2>
-                <p>Classic dough with Arencio & Verde flour</p>
-            </a>
+            <div class="category-grid">
+                <a href="sauces.html" class="category-card">Sauces</a>
+                <a href="bread.html" class="category-card">Bread</a>
+                <a href="chicken.html" class="category-card">Chicken</a>
+                <a href="fish.html" class="category-card">Fish</a>
+                <a href="oil.html" class="category-card">Oil</a>
+            </div>
         </div>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js');
-        }
-    </script>
+
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./sw.js');
+            }
+        </script>
     </body>
 </html>
