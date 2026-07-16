@@ -5,41 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Oil</title>
         <link rel="stylesheet" href="style.css">
-        <style>
-            .content {
-                max-width: 700px;
-                margin: 0 auto;
-                padding: 40px;
-                color: white;
-                min-height: 100vh;
-                box-sizing: border-box;
-            }
-
-            a.back {
-                display: inline-block;
-                margin-bottom: 24px;
-                color: rgba(255, 255, 255, 0.7);
-                text-decoration: none;
-            }
-
-            a.back:hover { color: white; }
-
-            h1 {
-                font-size: 48px;
-                margin-bottom: 30px;
-            }
-
-            .empty {
-                opacity: 0.6;
-                font-size: 18px;
-            }
-        </style>
     </head>
-    <body class="hero">
-        <div class="content">
-            <a href="index.html" class="back">← Back to home</a>
-            <h1>Oil</h1>
-            <p class="empty">No recipes yet.</p>
+    <body>
+        <div class="page">
+            <div class="top-bar">
+                <a href="index.html" class="back">← Back</a>
+                <button class="add-btn" id="toggle-btn">+ Add Recipe</button>
+            </div>
+            <h1>🫒 Oil</h1>
+
+            <div id="form-container" class="form-container" style="display:none">
+                <form id="add-form">
+                    <input type="text" id="name" placeholder="Recipe name" required>
+                    <input type="text" id="description" placeholder="Short description">
+                    <textarea id="ingredients" placeholder="Ingredients (one per line)" rows="5" required></textarea>
+                    <textarea id="steps" placeholder="Steps (one per line)" rows="5" required></textarea>
+                    <div class="form-buttons">
+                        <button type="submit" class="save-btn">Save</button>
+                        <button type="button" id="cancel-btn" class="cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="recipe-grid"></div>
         </div>
+
+        <script type="module">
+            import { initApp, toggleForm } from './recipes-app.js';
+            document.getElementById('toggle-btn').addEventListener('click', toggleForm);
+            document.getElementById('cancel-btn').addEventListener('click', toggleForm);
+            initApp('oil');
+        </script>
     </body>
 </html>

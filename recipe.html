@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipe</title>
+        <link rel="manifest" href="manifest.json">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" href="img.jpg">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="recipe-page">
+            <div class="top-bar">
+                <a href="#" id="back-link" class="back">← Back</a>
+            </div>
+            <h1 id="recipe-name">Loading...</h1>
+
+            <h2>Ingredients</h2>
+            <ul id="ingredients-list"></ul>
+
+            <h2>How to Make</h2>
+            <ol id="steps-list"></ol>
+        </div>
+
+        <script type="module">
+            import { loadRecipe } from './recipes-app.js';
+            loadRecipe();
+        </script>
+    </body>
+</html>

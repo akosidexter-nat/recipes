@@ -1,70 +1,41 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mina Recept</title>
+        <title>Dexter's Recipes</title>
         <link rel="manifest" href="manifest.json">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-title" content="Recipes">
         <link rel="apple-touch-icon" href="img.jpg">
         <link rel="stylesheet" href="style.css">
-        <style>
-            .home-container {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 60px 20px;
-                text-align: center;
-            }
-
-            h1 {
-                font-size: 64px;
-                margin-bottom: 10px;
-            }
-
-            .subtitle {
-                font-size: 20px;
-                margin-bottom: 50px;
-                opacity: 0.85;
-            }
-
-            .category-grid {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px;
-            }
-
-            .category-card {
-                display: inline-block;
-                background: rgba(255, 255, 255, 0.15);
-                border: 2px solid rgba(255, 255, 255, 0.4);
-                border-radius: 12px;
-                padding: 30px 50px;
-                text-decoration: none;
-                color: white;
-                font-size: 24px;
-                font-weight: bold;
-                font-family: system-ui;
-                transition: background 0.2s;
-            }
-
-            .category-card:hover {
-                background: rgba(255, 255, 255, 0.25);
-            }
-        </style>
     </head>
-    <body class="hero">
-        <div class="home-container">
-            <h1>Mina Recept</h1>
-            <p class="subtitle">Dexter's Personal Recipe</p>
+    <body>
+        <div class="home">
+            <h1>🍳 Dexter's Recipes</h1>
+            <p class="subtitle">Your personal cookbook</p>
 
             <div class="category-grid">
-                <a href="sauces.html" class="category-card">Sauces</a>
-                <a href="bread.html" class="category-card">Bread</a>
-                <a href="chicken.html" class="category-card">Chicken</a>
-                <a href="fish.html" class="category-card">Fish</a>
-                <a href="oil.html" class="category-card">Oil</a>
+                <a href="sauces.html" class="category-card cat-sauces">
+                    <span class="emoji">🍲</span>
+                    Sauces
+                </a>
+                <a href="bread.html" class="category-card cat-bread">
+                    <span class="emoji">🍞</span>
+                    Bread
+                </a>
+                <a href="chicken.html" class="category-card cat-chicken">
+                    <span class="emoji">🍗</span>
+                    Chicken
+                </a>
+                <a href="fish.html" class="category-card cat-fish">
+                    <span class="emoji">🐟</span>
+                    Fish
+                </a>
+                <a href="oil.html" class="category-card cat-oil">
+                    <span class="emoji">🫒</span>
+                    Oil
+                </a>
             </div>
         </div>
 

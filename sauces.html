@@ -5,58 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sauces</title>
         <link rel="stylesheet" href="style.css">
-        <style>
-            .content {
-                max-width: 700px;
-                margin: 0 auto;
-                padding: 40px;
-                color: white;
-                min-height: 100vh;
-                box-sizing: border-box;
-            }
-
-            a.back {
-                display: inline-block;
-                margin-bottom: 24px;
-                color: rgba(255, 255, 255, 0.7);
-                text-decoration: none;
-            }
-
-            a.back:hover { color: white; }
-
-            h1 {
-                font-size: 48px;
-                margin-bottom: 30px;
-            }
-
-            .recipe-card {
-                display: block;
-                background: rgba(255, 255, 255, 0.15);
-                border: 2px solid rgba(255, 255, 255, 0.4);
-                border-radius: 12px;
-                padding: 24px 30px;
-                text-decoration: none;
-                color: white;
-                margin-bottom: 16px;
-                transition: background 0.2s;
-            }
-
-            .recipe-card:hover { background: rgba(255, 255, 255, 0.25); }
-
-            .recipe-card h2 { margin: 0 0 6px 0; }
-
-            .recipe-card p { margin: 0; opacity: 0.8; font-size: 14px; }
-        </style>
     </head>
-    <body class="hero">
-        <div class="content">
-            <a href="index.html" class="back">← Back to home</a>
-            <h1>Sauces</h1>
+    <body>
+        <div class="page">
+            <div class="top-bar">
+                <a href="index.html" class="back">← Back</a>
+                <button class="add-btn" id="toggle-btn">+ Add Recipe</button>
+            </div>
+            <h1>🍲 Sauces</h1>
 
-            <a href="mainsite.html" class="recipe-card">
-                <h2>Red Wine Sauce</h2>
-                <p>Classic sauce from Grand Véranda</p>
-            </a>
+            <div id="form-container" class="form-container" style="display:none">
+                <form id="add-form">
+                    <input type="text" id="name" placeholder="Recipe name" required>
+                    <input type="text" id="description" placeholder="Short description">
+                    <textarea id="ingredients" placeholder="Ingredients (one per line)" rows="5" required></textarea>
+                    <textarea id="steps" placeholder="Steps (one per line)" rows="5" required></textarea>
+                    <div class="form-buttons">
+                        <button type="submit" class="save-btn">Save</button>
+                        <button type="button" id="cancel-btn" class="cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="recipe-grid"></div>
         </div>
+
+        <script type="module">
+            import { initApp, toggleForm } from './recipes-app.js';
+            document.getElementById('toggle-btn').addEventListener('click', toggleForm);
+            document.getElementById('cancel-btn').addEventListener('click', toggleForm);
+            initApp('sauces');
+        </script>
     </body>
 </html>

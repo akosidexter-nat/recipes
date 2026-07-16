@@ -1,14 +1,14 @@
-const CACHE_NAME = 'recipes-v3';
+const CACHE_NAME = 'recipes-v4';
 const FILES_TO_CACHE = [
     './index.html',
-    './mainsite.html',
-    './pizza.html',
+    './recipe.html',
     './sauces.html',
     './bread.html',
     './chicken.html',
     './fish.html',
     './oil.html',
     './style.css',
+    './recipes-app.js',
     './img.jpg',
     './background.jpg'
 ];

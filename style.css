@@ -1,19 +1,252 @@
-body{
+* {
     margin: 0;
-    font-family: system-ui;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero {
-    color:rgb(241, 236, 236);
-    background-image: url("background.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-recipe {
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f5f5f0;
+    color: #1a1a1a;
     min-height: 100vh;
-    background-image: url("img.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+}
+
+/* ── Home page ── */
+.home {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 64px 24px;
+    text-align: center;
+}
+
+.home h1 {
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+}
+
+.home .subtitle {
+    color: #999;
+    font-size: 16px;
+    margin-bottom: 48px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.category-card {
+    border-radius: 24px;
+    padding: 36px 16px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: 800;
+    font-size: 18px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.category-card .emoji {
+    font-size: 44px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.cat-sauces  { background: #E55B5B; }
+.cat-bread   { background: #E8A838; }
+.cat-chicken { background: #E07020; }
+.cat-fish    { background: #3D7EDD; }
+.cat-oil     { background: #45A85A; }
+
+/* ── Category pages ── */
+.page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    min-height: 100vh;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+a.back {
+    color: #999;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+a.back:hover { color: #333; }
+
+.page h1 {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+}
+
+.add-btn {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-family: system-ui;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-btn:hover { background: #444; }
+
+/* ── Add recipe form ── */
+.form-container {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    background: #f5f5f0;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: #1a1a1a;
+    font-family: system-ui;
+    font-size: 15px;
+    margin-bottom: 12px;
+    resize: vertical;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: #1a1a1a;
+}
+
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+    color: #bbb;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.save-btn {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-family: system-ui;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.cancel-btn {
+    background: transparent;
+    color: #999;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-family: system-ui;
+    cursor: pointer;
+}
+
+/* ── Recipe cards on category pages ── */
+.recipe-card {
+    display: block;
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.recipe-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.recipe-card h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.recipe-card p {
+    color: #999;
+    font-size: 14px;
+}
+
+.empty {
+    color: #bbb;
+    font-size: 16px;
+    text-align: center;
+    padding: 48px 0;
+}
+
+/* ── Recipe detail page ── */
+.recipe-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
+
+.recipe-page h1 {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 36px;
+    line-height: 1.1;
+}
+
+.recipe-page h2 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #999;
+    margin-bottom: 14px;
+    margin-top: 32px;
+}
+
+.recipe-page ul,
+.recipe-page ol {
+    padding-left: 20px;
+}
+
+.recipe-page li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #222;
 }
