@@ -13,14 +13,31 @@
         <div class="recipe-page">
             <div class="top-bar">
                 <a href="#" id="back-link" class="back">← Back</a>
+                <button class="add-btn" id="edit-btn">Edit</button>
             </div>
-            <h1 id="recipe-name">Loading...</h1>
 
-            <h2>Ingredients</h2>
-            <ul id="ingredients-list"></ul>
+            <!-- View mode -->
+            <div id="view-mode">
+                <h1 id="recipe-name">Loading...</h1>
+                <h2>Ingredients</h2>
+                <ul id="ingredients-list"></ul>
+                <h2>How to Make</h2>
+                <ol id="steps-list"></ol>
+            </div>
 
-            <h2>How to Make</h2>
-            <ol id="steps-list"></ol>
+            <!-- Edit mode (hidden by default) -->
+            <div id="edit-mode" class="form-container" style="display:none">
+                <form id="edit-form">
+                    <input type="text" id="edit-name" placeholder="Recipe name" required>
+                    <input type="text" id="edit-description" placeholder="Short description">
+                    <textarea id="edit-ingredients" placeholder="Ingredients (one per line)" rows="6" required></textarea>
+                    <textarea id="edit-steps" placeholder="Steps (one per line)" rows="6" required></textarea>
+                    <div class="form-buttons">
+                        <button type="submit" class="save-btn">Save</button>
+                        <button type="button" id="cancel-edit-btn" class="cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <script type="module">
